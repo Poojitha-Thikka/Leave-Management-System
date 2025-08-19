@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDashboard';
 import EmployeeManagement from './pages/EmployeeManagement';
 import ApplyLeave from './pages/ApplyLeave';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const Navbar = ({ isAuthenticated, isAdmin, onLogout }) => {
   return (
@@ -81,14 +82,10 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         {isAuthenticated ? (
           <>
-            <Route path="/dashboard" element={<EmployeeDashboard />} />
-            <Route path="/apply-leave" element={<ApplyLeave />} />
-            {isAdmin && (
-              <>
-                <Route path="/admin-dashboard" element={<AdminDashboard />} />
-                <Route path="/employee-management" element={<EmployeeManagement />} />
-              </>
-            )}
+            <Route path="/dashboard" element={<ProtectedRoute allowedRoles={['employee', 'admin']}><EmployeeDashboard /></ProtectedRoute>} />
+            <Route path="/apply-leave" element={<ProtectedRoute allowedRoles={['employee']}><ApplyLeave /></ProtectedRoute>} />
+            <Route path="/admin-dashboard" element={<ProtectedRoute allowedRoles={['admin']}><AdminDashboard /></ProtectedRoute>} />
+            <Route path="/employee-management" element={<ProtectedRoute allowedRoles={['admin']}><EmployeeManagement /></ProtectedRoute>} />
           </>
         ) : (
           <Route path="*" element={<Login onLogin={handleLogin} />} />
