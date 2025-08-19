@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import EmployeeManagement from './pages/EmployeeManagement';
@@ -69,7 +69,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} onLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} />} />
@@ -88,7 +88,7 @@ function App() {
           <Route path="*" element={<Login onLogin={handleLogin} />} />
         )}
       </Routes>
-    </Router>
+    </>
   );
 }
 
