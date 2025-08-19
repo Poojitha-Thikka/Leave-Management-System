@@ -1,0 +1,257 @@
+.employee-management {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.employee-management h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.employee-list-section,
+.leave-requests-section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling for tables */
+}
+
+.employee-management table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.employee-management th,
+.employee-management td {
+  padding: 15px;
+  border: 1px solid #ecf0f1;
+  text-align: left;
+}
+
+.employee-management th {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.employee-management tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.employee-management tr:hover {
+  background-color: #e9ecef; /* Smooth hover effect for table rows */
+}
+
+.employee-management button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect for buttons */
+}
+
+.employee-management button:first-of-type {
+  background-color: #28a745; /* Approve button color */
+  color: white;
+}
+
+.employee-management button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.employee-management button.reject {
+  background-color: #dc3545; /* Reject button color */
+  color: white;
+}
+
+.employee-management button.reject:hover {
+  background-color: #c82333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is on top */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.modal-content button:hover {
+  background-color: #5a6268;
+}
+
+.message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0.9; /* Slightly transparent */
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.no-employees-message,
+.no-requests-message {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Highlight pending requests */
+.status-pending {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.status-pending:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+}
+
+.status-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .employee-management h2 {
+    font-size: 1.5em;
+  }
+
+  .employee-management th,
+  .employee-management td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .employee-management button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.5em;
+  }
+
+  /* Make table columns stack on small screens */
+  .employee-management table,
+  .employee-management thead,
+  .employee-management tbody,
+  .employee-management th,
+  .employee-management td,
+  .employee-management tr {
+    display: block;
+  }
+
+  .employee-management thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .employee-management tr {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .employee-management td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  .employee-management td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+
+  .employee-management td:last-child {
+    border-bottom: 0;
+  }
+}

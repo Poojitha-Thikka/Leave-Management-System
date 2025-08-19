@@ -1,0 +1,133 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-color-light);
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.signup-container h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.signup-container form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.signup-container button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--success-color);
+  color: var(--text-color-dark);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-container button:hover {
+  background-color: var(--success-dark-color);
+  transform: translateY(-2px);
+}
+
+.signup-container button:active {
+  transform: translateY(0);
+}
+
+.message {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: var(--success-color);
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: var(--error-color);
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .signup-container h2 {
+    font-size: 2em;
+  }
+
+  .signup-container form {
+    padding: 30px;
+    margin: 0 15px;
+  }
+
+  .form-group label {
+    font-size: 1em;
+  }
+
+  .form-group input {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .signup-container button {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .message {
+    font-size: 1em;
+    padding: 12px;
+    margin: 20px 15px 0;
+  }
+}

@@ -1,0 +1,51 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #007bff;
+  --primary-dark-color: #0056b3;
+
+  /* Secondary Colors */
+  --secondary-color: #6c757d;
+  --secondary-dark-color: #5a6268;
+
+  /* Success Colors */
+  --success-color: #28a745;
+  --success-dark-color: #1e7e34;
+
+  /* Error/Danger Colors */
+  --error-color: #dc3545;
+  --error-dark-color: #bd2130;
+
+  /* Warning Colors */
+  --warning-color: #ffc107;
+  --warning-dark-color: #d39e00;
+
+  /* Info Colors */
+  --info-color: #17a2b8;
+  --info-dark-color: #117a8b;
+
+  /* Background Colors */
+  --background-color-light: #f8f9fa;
+  --background-color-dark: #343a40;
+
+  /* Text Colors */
+  --text-color-light: #212529;
+  --text-color-dark: #f8f9fa;
+
+  /* Border Colors */
+  --border-color: #dee2e6;
+
+  /* Hover Effects */
+  --hover-bg-color: #e9ecef;
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-light: #343a40;
+    --background-color-dark: #212529;
+    --text-color-light: #f8f9fa;
+    --text-color-dark: #212529;
+    --border-color: #495057;
+    --hover-bg-color: #495057;
+  }
+}

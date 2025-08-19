@@ -1,0 +1,2576 @@
+.admin-dashboard {
+.admin-dashboard {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.admin-dashboard h1 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #34495e;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #2980b9;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.leave-requests-section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leave-requests-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.leave-requests-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+
+
+.leave-requests-section table thead th {
+  background-color: #3498db;
+  color: black !important; /* Explicitly set header color to black */
+  font-weight: bold !important; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.leave-requests-section tr:hover {
+  background-color: #d0e4f9;
+}
+
+.status-pending {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.leave-requests-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.leave-requests-section button:hover {
+  background-color: #218838;
+}
+
+.leave-requests-section button.reject {
+  background-color: #dc3545;
+}
+
+.leave-requests-section button.reject:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-controls select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pending-request {
+  background-color: #fff3cd; /* Light orange/yellow background */
+  border-left: 5px solid #ffc107; /* Orange left border */
+}
+
+.pending-request:hover {
+  background-color: #ffeeba; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 2em;
+  }
+
+  .leave-requests-section h2 {
+    font-size: 1.5em;
+  }
+
+  .leave-requests-section th,
+  .leave-requests-section td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .leave-requests-section button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
+.leave-requests-section table th {
+  background-color: #3498db;
+  color: black; /* Explicitly set header color to black */
+  font-weight: bold; /* Ensure header text is bold */
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.leave-requests-section td {
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: left;
+  /* Removed conflicting color: rgb(9, 9, 9); */
+}
+
+.leave-requests-section tr:nth-child(even) {
+  background-color: #

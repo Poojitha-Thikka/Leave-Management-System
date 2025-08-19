@@ -21,6 +21,18 @@ enum LeaveStatus {
   CANCELLED
 }
 
+enum LeaveType {
+  ANNUAL
+  SICK
+  CASUAL
+  MATERNITY
+  PATERNITY
+  BEREAVEMENT
+  SABBATICAL
+  UNPAID
+  UNSPECIFIED
+}
+
 model User {
   id            String         @id @default(uuid())
   name          String
@@ -44,6 +56,7 @@ model LeaveRequest {
   endDate     DateTime    @map("end_date")
   days        Int
   reason      String
+  leaveType   LeaveType @default(UNSPECIFIED)
   status      LeaveStatus @default(PENDING)
   decisionBy  String?     @map("decision_by")
   decisionNote String?    @map("decision_note")

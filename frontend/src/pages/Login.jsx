@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../assets/css/Login.css';
 
-export default function Login() {
+export default function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [loginAsAdmin, setLoginAsAdmin] = useState(false); // New state for admin login option
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -28,21 +31,17 @@ export default function Login() {
       setLoading(true);
       const response = await axios.post('http://localhost:5000/login', {
         email,
-        password
+        password,
+        isAdmin: loginAsAdmin
       });
       
-      // Store token in localStorage
+      // Store token and role in localStorage
       localStorage.setItem('token', response.data.token);
-      
-      // Decode token to get user role
       const tokenData = JSON.parse(atob(response.data.token.split('.')[1]));
+      localStorage.setItem('role', tokenData.role);
       
       // Redirect based on role
-      if (tokenData.role === 'ADMIN') {
-        navigate('/admin/dashboard');
-      } else {
-        navigate('/apply-leave');
-      }
+      onLogin({ token: response.data.token, role: tokenData.role });
       
     } catch (err) {
       setLoading(false);
@@ -55,65 +54,68 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
+    <div className="login-container">
+      <div className="login-card">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Leave Management System
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Sign in to your account
-          </p>
+          <h2>Leave Management System</h2>
+          <p>Login to your account</p>
         </div>
         
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+          <div className="message error">
             {error}
           </div>
         )}
+        {message && (
+          <div className="message success">
+            {message}
+          </div>
+        )}
         
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm space-y-4">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              />
-            </div>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group checkbox-group">
+            <input
+              id="loginAsAdmin"
+              type="checkbox"
+              checked={loginAsAdmin}
+              onChange={(e) => setLoginAsAdmin(e.target.checked)}
+            />
+            <label htmlFor="loginAsAdmin">Login as Admin</label>
           </div>
 
           <div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-login"
             >
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? 'Logging in...' : 'Login'}
             </button>
           </div>
         </form>
