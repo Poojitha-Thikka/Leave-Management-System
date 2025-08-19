@@ -24,8 +24,10 @@ const Navbar = ({ isAuthenticated, isAdmin, onLogout }) => {
             <li><button onClick={onLogout} className="hover:text-gray-300">Logout</button></li>
           </>
         ) : (
-          <li><Link to="/" className="hover:text-gray-300">Login</Link></li>
-          <li><Link to="/signup" className="hover:text-gray-300">Sign Up</Link></li>
+          <>
+            <li><Link to="/" className="hover:text-gray-300">Login</Link></li>
+            <li><Link to="/signup" className="hover:text-gray-300">Sign Up</Link></li>
+          </>
         )}
       </ul>
     </nav>
