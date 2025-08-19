@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDashboard';
 import EmployeeManagement from './pages/EmployeeManagement';
 import ApplyLeave from './pages/ApplyLeave';
@@ -24,6 +25,7 @@ const Navbar = ({ isAuthenticated, isAdmin, onLogout }) => {
           </>
         ) : (
           <li><Link to="/" className="hover:text-gray-300">Login</Link></li>
+          <li><Link to="/signup" className="hover:text-gray-300">Sign Up</Link></li>
         )}
       </ul>
     </nav>
@@ -74,6 +76,7 @@ function App() {
       <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} onLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} />} />
+        <Route path="/signup" element={<Signup />} />
         {isAuthenticated ? (
           <>
             <Route path="/dashboard" element={<EmployeeDashboard />} />
