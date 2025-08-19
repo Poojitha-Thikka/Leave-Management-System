@@ -3,7 +3,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [department, setDepartment] = useState('');
+    const [joiningDate, setJoiningDate] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
@@ -11,8 +14,11 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/signup', {
+            const response = await axios.post('http://localhost:5000/signup', {
+                name,
                 email,
+                department,
+                joiningDate,
                 password,
             });
             setMessage(response.data.message);
@@ -29,12 +35,42 @@ const Signup = () => {
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="department">Department:</label>
+                    <input
+                        type="text"
+                        id="department"
+                        value={department}
+                        onChange={(e) => setDepartment(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="joiningDate">Joining Date:</label>
+                    <input
+                        type="date"
+                        id="joiningDate"
+                        value={joiningDate}
+                        onChange={(e) => setJoiningDate(e.target.value)}
                         required
                     />
                 </div>
