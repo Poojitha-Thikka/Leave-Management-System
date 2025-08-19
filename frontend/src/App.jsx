@@ -12,10 +12,6 @@ function App() {
       </Routes>
     </Router>
   );
-}{/* Add other routes here as needed */}
-      </Routes>
-    </Router>
-  );
 }
 
 export default App;
